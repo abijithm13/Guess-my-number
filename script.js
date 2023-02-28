@@ -5,8 +5,6 @@ function createSecretNumber() {
 }
 
 let secretNumber = createSecretNumber();
-let score = 20;
-let highScore = 0;
 
 const messageEl = document.querySelector('.message');
 const numberEl = document.querySelector('.number');
@@ -18,9 +16,11 @@ const newgameEl = document.querySelector('.newgame');
 checkEl.addEventListener('click', function () {
   const guess = Number(guessEl.value);
 
+  
   // When there is no input
   if (!guess) {
     messageEl.textContent = 'No number!';
+
 
     // When player wins
   } else if (guess === secretNumber) {
@@ -32,8 +32,8 @@ checkEl.addEventListener('click', function () {
 
     // When guess is wrong
   } else if (guess !== secretNumber) {
-
-    messageEl.textContent = guess > secretNumber ? 'Too high!' : 'Too low!';
+messageEl.textContent = guess > secretNumber ? 'Too high!' : 'Too low!';
+bodyEl.style.backgroundColor ='#FF0000';
 }
 });
 
